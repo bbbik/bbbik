@@ -1,7 +1,7 @@
 <%@ page language='java' contentType='text/html; charset=utf-8' pageEncoding='utf-8'%>
 <%
 	String[] letters = request.getParameterValues("letter");
-	String[] genders = request.getParameterValues("gender");
+	String[] gender = request.getParameterValues("gender");
 	String[] jobs = request.getParameterValues("job");
 %>
 <%-- 과제: letters 를 iterating 해서 출력하라. --%>
@@ -13,8 +13,14 @@
 <% 
 		} 
 %> <br>
-
-		<%= genders %> <br>
+	<%
+		if(gender != null)
+			for(String genders: gender) {
+	%>
+		<%= gender %> &nbsp;
+	<%
+			}
+	%> <br>
 
 <%
 	if(jobs != null)
